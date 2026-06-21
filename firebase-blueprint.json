@@ -1,0 +1,78 @@
+{
+  "entities": {
+    "User": {
+      "title": "User Profile",
+      "description": "User account information synchronized from Auth",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string" },
+        "displayName": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "email"]
+    },
+    "Portfolio": {
+      "title": "Portfolio Webpage Data",
+      "description": "Detailed representation of a user's professional profile, resume details and published portfolio website",
+      "type": "object",
+      "properties": {
+        "ownerId": { "type": "string", "description": "The UID of the user who owns this portfolio" },
+        "slug": { "type": "string", "description": "The custom subpath used for dynamic hosting" },
+        "personal": {
+          "type": "object",
+          "properties": {
+            "name": { "type": "string" },
+            "title": { "type": "string" },
+            "email": { "type": "string" },
+            "phone": { "type": "string" },
+            "location": { "type": "string" },
+            "bio": { "type": "string" },
+            "avatarUrl": { "type": "string" }
+          },
+          "required": ["name", "title"]
+        },
+        "experiences": {
+          "type": "array",
+          "items": { "type": "object" }
+        },
+        "educations": {
+          "type": "array",
+          "items": { "type": "object" }
+        },
+        "skills": {
+          "type": "array",
+          "items": { "type": "object" }
+        },
+        "projects": {
+          "type": "array",
+          "items": { "type": "object" }
+        },
+        "socialLinks": {
+          "type": "object"
+        },
+        "theme": {
+          "type": "object",
+          "properties": {
+            "templateStyle": { "type": "string", "enum": ["modern", "executive", "tech", "minimal"] },
+            "colorSchema": { "type": "string" }
+          }
+        },
+        "viewsCount": { "type": "number" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["ownerId", "slug", "personal"]
+    }
+  },
+  "firestore": {
+    "users/{uid}": {
+      "schema": "User",
+      "description": "User metadata objects"
+    },
+    "portfolios/{portfolioId}": {
+      "schema": "Portfolio",
+      "description": "Portfolio and Resume details mapping to dynamic hosted sites"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Resume and Portfolio Builder",
+  "description": "A professional web portfolio and resume builder. Create, preview, enhance with Gemini AI, and publish to customized hosted links.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
