@@ -1,20 +1,3 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+Dynamic Resume and Portfolio Builder
+A web tool that takes user input regarding their experience and education to automatically generate a hosted portfolio website. Users get a live preview of their changing resume and can host their final portfolio on a customized web route.
 
-# Run and deploy your AI Studio app
-
-This contains everything you need to run your app locally.
-
-View your app in AI Studio: https://ai.studio/apps/671ee6d3-2d5c-47fd-935b-b203beb569dd
-
-## Run Locally
-
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
